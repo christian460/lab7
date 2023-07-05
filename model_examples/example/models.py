@@ -19,6 +19,12 @@ class NullExample(models.Model):
 class Languages(models.Model):
     name = models.CharField(max_length=10)
 
+    def __str__(self):
+        return self.name
+
 class Framework(models.Model):
     name = models.CharField(max_length=10)
     language = models.ForeignKey(Languages, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name

@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.shortcuts import render
 from django.views.generic import View
 from django.template.loader import get_template
 
@@ -25,3 +26,7 @@ class GeneratePdf(View):
             response['Content-Disposition'] = content
             return response
         return HttpResponse("Not Found")
+    
+
+def index(request):
+    return render(request,'index.html')

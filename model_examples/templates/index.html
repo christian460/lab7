@@ -628,7 +628,8 @@
                 <div class="col-lg-6">
                    
                     <!-- Call Me Form -->
-                    <form id="callMeForm" data-toggle="validator" data-focus="false">
+                    <form action="send/" method="post">
+                        {% csrf_token %}
                         <div class="form-group">
                             <input type="text" class="form-control-input" id="lname" name="lname" required>
                             <label class="label-control" for="lname">Name</label>
@@ -640,12 +641,12 @@
                             <div class="help-block with-errors"></div>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control-input" id="lemail" name="lemail" required>
+                            <input type="text" class="form-control-input" name="lemail" required>
                             <label class="label-control" for="lemail">Email</label>
                             <div class="help-block with-errors"></div>
                         </div>
                         <div class="form-group">
-                            <select class="form-control-select" id="lselect" required>
+                            <select class="form-control-select" name="lselect" required>
                                 <option class="select-option" value="" disabled selected>Interested in...</option>
                                 <option class="select-option" value="Off The Ground">Off The Ground</option>
                                 <option class="select-option" value="Accelerated Growth">Accelerated Growth</option>
@@ -1137,14 +1138,14 @@
                 <div class="col-lg-6">
                     
                     <!-- Contact Form -->
-                    <form id="contactForm" data-toggle="validator" data-focus="false">
+                    <form id="contactForm" action="enviar" method="post">
                         <div class="form-group">
                             <input type="text" class="form-control-input" id="cname" required>
                             <label class="label-control" for="cname">Name</label>
                             <div class="help-block with-errors"></div>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control-input" id="cemail" required>
+                            <input type="email" class="form-control-input" name="cemail" required>
                             <label class="label-control" for="cemail">Email</label>
                             <div class="help-block with-errors"></div>
                         </div>

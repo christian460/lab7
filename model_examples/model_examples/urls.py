@@ -17,10 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from .views import GeneratePdf, index
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('pdf/',GeneratePdf.as_view()),
+    path('pdf/<int:project_id>/',GeneratePdf.as_view()),
     path('send/', include('correo.urls')),
     path('', index)
 ]
+
+urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

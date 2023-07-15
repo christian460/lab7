@@ -79,66 +79,119 @@
 ## RESOLUCIÓN DE LA PRÁCTICA
 ### COMMITS
 - Master: Rama con la replicación de los videos
+  
+  ![commit](imagenes_lab7/commit1.jpg)
+  
+  ![commit](imagenes_lab7/commit2.jpg)
+  
+  ![commit](imagenes_lab7/commit3.jpg)
+  
 - Aplicación: La rama donde se desarrolló la aplicación empleando lo aprendido en los videos
+  
+  ![commit](imagenes_lab7/commita1.jpg)
+
+  ![commit](imagenes_lab7/commita2.jpg)
+
+  ![commit](imagenes_lab7/commita3.jpg)
+
+  ![commit](imagenes_lab7/commita4.jpg)
+
+  ![commit](imagenes_lab7/commita5.jpg)
+  
 - Master:
 - Relaciones: (models.py)
+  
+  ![model](imagenes_lab7/modelm.jpg)
   
   El modelo consta de clases independientes como lo son simple, DateExample, NullExample y en el desarrollo de la práctica se trabajó con relaciones entre las tablas que se generan con los modelos.
   Tenemos la relación de uno a muchos la cual se puede ver entre las clases Languages y Framework ya que para un lenguaje de programación existen varios frameworks que trabajan con estos.
   También se aplicó la relación de muchos a muchos este se puede ver entre las clases Movie y Character dado que varios actores actúan en varias películas.
 
 - Pdf: (util.py - views.py - urls.py - invoice.html)
+  
+  ![util](imagenes_lab7/util.py.jpg)
 
   En el archivo util.py se implemento el metodo render_to_pdf() que recibe como parámetros el html donde se encuentra el formato y contenido del pdf y como segundo parámetro lleva el contexto donde se ubican los datos que se incrustaran en el pdf. Los parámetros son guardados en las variables template y html respectivamente utilizando los métodos get_template que captura el valor del primer parámetro y template.render() que captura el contexto recibido. Luego se genera el pdf utilizando el método pisa.pisaDocument()  utilizando la plantilla html.
   De no haber ningún error se retorna un HttpResponse que contiene el pdf en caso contrario no se retorna nada.
 
+  ![views](imagenes_lab7/viewsm.jpg)
   
   Se llama a la plantilla html y se define el contexto para ser enviados al método render_to_pdf(),  si se recibe el pdf Se genera las configuraciones del pdf para ser mostrado y poder ser descargado. En caso no se reciba nada se muestra un mensaje que no fue encontrado.
 
+  ![urls](imagenes_lab7/urlsm.jpg)
 
   Se llama al método GeneratePdf que se encuentra en el archivo views.py por medio de la url.
-
+  
+  ![invoice](imagenes_lab7/invoicem.jpg)
 
   La plantilla html con la que se generará el pdf.
   
 - Correo: (views.py - enviar.html - urls.py)
   
+  ![views](imagenes_lab7/viewsmc.jpg)
+
+  ![correo](imagenes_lab7/enviarm.jpg)
+  
   Por medio del método enviar el cual utiliza el método send_mail() que recibe como parámetros el asunto, el mensaje, el remitente que se encuentra en el archivo settings.py en el cual se configuro los datos para enviar un correo, el destinatario y el atributo fail_silently que evita errores al momento de enviar el correo, en caso el correo sea enviado correctamente nos dirigirá a enviar.html  y mostrará el mensaje que el correo fue enviado con éxito.
 
-
+  ![urls](imagenes_lab7/urlsmc.jpg)
+  
   En el archivo urls.py se llama al método enviar que está en el archivo views.py al estar en el inicio del proyecto.
   
 - Aplicación:
 - Index:
+  
+   ![index](imagenes_lab7/indexa.jpg)
 
   En el método index se recolectan los datos que pertenecen a los autores y proyectos para así ser guardados en variables y enviarlos en el contexto de método render() llamando a index.html donde por medio de los tag for serán mostrados en la página web.
-
+  
+   ![urls](imagenes_lab7/urlsi.jpg)
 
   Se llama al método index que se encuentra en el archivo views.py.
+
+  ![index](imagenes_lab7/index1.jpg)
+
+  ![index](imagenes_lab7/index2.jpg)
+
+  ![index](imagenes_lab7/index3.jpg)
   
 - Relaciones: (models.py)
+  
+  ![model](imagenes_lab7/modela.jpg)
   
   En el modelo de la aplicación diseñada tenemos las clases Autor y Proyecto las cuales presentan una relación de una a muchas dado que un autor puede desarrollar múltiples proyectos.
   La clase Autor presenta los atributos name, cargo y perfil; que representan el nombre, su cargo en la empresa y su foto respectivamente. Presentan como indicador el atributo name.
   La clase Proyecto presenta los atributos name, img, desc y autor; que representan el nombre del proyecto, su imagen que se mostrará, su descripción y su autor respectivamente. Este último atributo presenta clave foránea que está relacionada con la clase Autor. En caso de ser eliminado un autor se efectúa un borrado en forma cascada.
 
 - Pdf:(utils.py - views.py - urls.py - proyecto.html)
-
+  
+  ![utils](imagenes_lab7/util.py.jpg)
+    
   En el archivo util.py se implemento el metodo render_to_pdf() que recibe como parámetros el html donde se encuentra el formato y contenido del pdf y como segundo parámetro lleva el contexto donde se ubican los datos que se incrustaran en el pdf. Los parámetros son guardados en las variables template y html respectivamente utilizando los métodos get_template que captura el valor del primer parámetro y template.render() que captura el contexto recibido. Luego se genera el pdf utilizando el método pisa.pisaDocument()  utilizando la plantilla html.
   De no haber ningún error se retorna un HttpResponse que contiene el pdf en caso contrario no se retorna nada.
 
-
+  ![views](imagenes_lab7/viewsm.jpg)
+  
   Se llama a la plantilla html y se define el contexto para ser enviados al método render_to_pdf(),  si se recibe el pdf Se genera las configuraciones del pdf para ser mostrado y poder ser descargado. En caso no se reciba nada se muestra un mensaje que no fue encontrado.
 
+  ![views](imagenes_lab7/urlsap.jpg)
+  
   En el archivo urls.py se llama al método enviar que está en el archivo views.py utilizando un url dinámico por medio del id para mostrar los datos del proyecto que fue seleccionado.
+  
+  ![project](imagenes_lab7/project.jpg)
 
   La plantilla html con la que se generará el pdf.
 
-- Correo: (views.py - enviar.html - urls.py)
+   ![pdf](imagenes_lab7/pdfa.jpg)
 
+- Correo: (views.py - enviar.html - urls.py)
+  
+  
+  
   Por medio del método enviar el cual utiliza el método send_mail() que recibe como parámetros el asunto, el mensaje, el remitente que se encuentra en el archivo settings.py en el cual se configuro los datos para enviar un correo, el destinatario y el atributo fail_silently que evita errores al momento de enviar el correo, en caso el correo sea enviado correctamente nos dirigirá a enviar.html  y mostrará el mensaje que el correo fue enviado con éxito.
 
-
+  ![urls](imagenes_lab7/urlsmc.jpg)
+  
   En el archivo urls.py se llama al método enviar que está en el archivo views.py al estar en el inicio del proyecto.
 
 ## REFERENCIAS

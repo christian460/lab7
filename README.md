@@ -1,4 +1,4 @@
-<div align="center">
+![image](https://github.com/christian460/lab7/assets/64232962/d5d133f4-c917-4a0f-b8a7-b90219893e60)<div align="center">
 <table>
     <theader>
         <tr>
@@ -125,6 +125,8 @@
   ![invoice](imagenes_lab7/invoicem.jpg)
 
   La plantilla html con la que se generará el pdf.
+
+  ![invoice](imagenes_lab7/pdfm.jpg)
   
 - Correo: (views.py - enviar.html - urls.py)
   
@@ -182,11 +184,11 @@
 
   La plantilla html con la que se generará el pdf.
 
-   ![pdf](imagenes_lab7/pdfa.jpg)
+  ![pdf](imagenes_lab7/pdfa.jpg)
 
 - Correo: (views.py - enviar.html - urls.py)
   
-  
+  ![pdf](imagenes_lab7/correoa.jpg)
   
   Por medio del método enviar el cual utiliza el método send_mail() que recibe como parámetros el asunto, el mensaje, el remitente que se encuentra en el archivo settings.py en el cual se configuro los datos para enviar un correo, el destinatario y el atributo fail_silently que evita errores al momento de enviar el correo, en caso el correo sea enviado correctamente nos dirigirá a enviar.html  y mostrará el mensaje que el correo fue enviado con éxito.
 
